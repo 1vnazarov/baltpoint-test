@@ -425,5 +425,60 @@
         </div>
     </div>
 
+        <div class="container">
+        <h1>9.7</h1>
+
+
+        <div class="solution">
+
+            <div class="step">
+                <p>\(\int u \, dv = uv - \int v \, du\).</p>
+                <p>Пусть:</p>
+                <div class="formula">
+                    \[u = \ln^{2} x \quad \Rightarrow \quad du = 2 \ln x \cdot \frac{1}{x} dx = \frac{2 \ln x}{x} dx\]
+                    \[dv = \frac{dx}{x^{2}} \quad \Rightarrow \quad v = \int x^{-2} dx = -\frac{1}{x}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <p>Подставим выражения в формулу:</p>
+                <div class="formula">
+                    \[\int \frac{\ln^{2} x}{x^{2}} \, dx = \ln^{2} x \cdot \left(-\frac{1}{x}\right) - \int \left(-\frac{1}{x}\right) \cdot \frac{2 \ln x}{x} dx\]
+                    \[= -\frac{\ln^{2} x}{x} + 2 \int \frac{\ln x}{x^{2}} \, dx\]
+                </div>
+            </div>
+
+            <div class="step">
+                <p>Вычислим оставшийся интеграл \(\displaystyle J = \int \frac{\ln x}{x^{2}} \, dx\).</p>
+                <p>Пусть:</p>
+                <div class="formula">
+                    \[u_1 = \ln x \quad \Rightarrow \quad du_1 = \frac{dx}{x}\]
+                    \[dv_1 = \frac{dx}{x^{2}} \quad \Rightarrow \quad v_1 = -\frac{1}{x}\]
+                </div>
+                <p>Тогда:</p>
+                <div class="formula">
+                    \[J = \ln x \cdot \left(-\frac{1}{x}\right) - \int \left(-\frac{1}{x}\right) \cdot \frac{dx}{x}\]
+                    \[= -\frac{\ln x}{x} + \int \frac{dx}{x^{2}}\]
+                    \[= -\frac{\ln x}{x} - \frac{1}{x}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="formula">
+                    \[\int \frac{\ln^{2} x}{x^{2}} \, dx = -\frac{\ln^{2} x}{x} + 2 \left( -\frac{\ln x}{x} - \frac{1}{x} \right) + C\]
+                    \[= -\frac{\ln^{2} x}{x} - \frac{2 \ln x}{x} - \frac{2}{x} + C\]
+                </div>
+                <p>Вынесем общий множитель \(-\frac{1}{x}\) за скобки:</p>
+                <div class="formula">
+                    \[-\frac{1}{x} (\ln^{2} x + 2 \ln x + 2) + C\]
+                </div>
+            </div>
+
+            <div class="answer">
+                <p>Ответ: \(\displaystyle -\frac{\ln^{2} x + 2 \ln x + 2}{x} + C\)</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
