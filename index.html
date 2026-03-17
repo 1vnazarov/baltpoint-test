@@ -326,5 +326,53 @@
         </div>
     </div>
 
+        <div class="container">
+        <h1>9.5</h1>
+
+        <div class="solution">
+
+            <div class="step">
+                <p>Данный интеграл содержит показательную функцию в знаменателе. Умножим числитель и знаменатель подынтегральной дроби на \(e^{-x}\) (то есть на \(\frac{1}{e^{x}}\)):</p>
+                <div class="formula">
+                    \[\int \frac{dx}{3e^{x} + 1} = \int \frac{e^{-x} dx}{e^{-x}(3e^{x} + 1)} = \int \frac{e^{-x} dx}{3 + e^{-x}}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Замена переменной</h3>
+                <div class="formula">
+                    \[t = 3 + e^{-x}\]
+                </div>
+                <div class="formula">
+                    \[dt = (3 + e^{-x})' dx = -e^{-x} dx\]
+                </div>
+                <div class="formula">
+                    \[e^{-x} dx = -dt\]
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="formula">
+                    \[\int \frac{e^{-x} dx}{3 + e^{-x}} = \int \frac{-dt}{t} = -\int \frac{dt}{t}\]
+                </div>
+                <div class="formula">
+                    \[-\int \frac{dt}{t} = -\ln|t| + C\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Обратная замена</h3>
+                <p>Вернемся к исходной переменной \(x\), подставив \(t = 3 + e^{-x}\):</p>
+                <div class="formula">
+                    \[-\ln|t| + C = -\ln(3 + e^{-x}) + C\]
+                </div>
+            </div>
+
+            <div class="answer">
+                <p>Ответ: \(\displaystyle -\ln(3 + e^{-x}) + C\)</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
