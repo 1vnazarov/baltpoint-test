@@ -480,5 +480,71 @@
         </div>
     </div>
 
+    <div class="container">
+        <h1>9.8</h1>
+
+        <div class="solution">
+
+            <div class="step">
+                <div class="formula">
+                    \[\frac{x^{3} + 1}{x^{3} - x^{2}} = \frac{(x^{3} - x^{2}) + x^{2} + 1}{x^{3} - x^{2}} = \frac{x^{3} - x^{2}}{x^{3} - x^{2}} + \frac{x^{2} + 1}{x^{3} - x^{2}} = 1 + \frac{x^{2} + 1}{x^{2}(x - 1)}\]
+                </div>
+                <p>Тогда интеграл примет вид:</p>
+                <div class="formula">
+                    \[\int \left( 1 + \frac{x^{2} + 1}{x^{2}(x - 1)} \right) dx = \int 1 \, dx + \int \frac{x^{2} + 1}{x^{2}(x - 1)} \, dx\]
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="formula">
+                    \[\frac{x^{2} + 1}{x^{2}(x - 1)} = \frac{A}{x} + \frac{B}{x^{2}} + \frac{C}{x - 1}\]
+                </div>
+                <div class="formula">
+                    \[x^{2} + 1 = Ax(x - 1) + B(x - 1) + Cx^{2}\]
+                </div>
+                <div class="formula">
+                    \[x^{2} + 1 = Ax^{2} - Ax + Bx - B + Cx^{2} = (A + C)x^{2} + (B - A)x - B\]
+                </div>
+                <div class="calculation">
+                    <p>\(x^{2}: \quad A + C = 1\)</p>
+                    <p>\(x^{1}: \quad B - A = 0 \quad \Rightarrow \quad B = A\)</p>
+                    <p>\(x^{0}: \quad -B = 1 \quad \Rightarrow \quad B = -1\)</p>
+                </div>
+                <div class="formula">
+                    \[A = B = -1\]
+                    \[C = 1 - A = 1 - (-1) = 2\]
+                </div>
+                <div class="formula">
+                    \[\frac{x^{2} + 1}{x^{2}(x - 1)} = -\frac{1}{x} - \frac{1}{x^{2}} + \frac{2}{x - 1}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <p>Подставим разложение в интеграл:</p>
+                <div class="formula">
+                    \[\int \left( 1 - \frac{1}{x} - \frac{1}{x^{2}} + \frac{2}{x - 1} \right) dx\]
+                </div>
+                <p>Вычислим каждый интеграл по отдельности:</p>
+                <div class="formula">
+                    \[\int 1 \, dx = x\]
+                    \[\int -\frac{1}{x} \, dx = -\ln|x|\]
+                    \[\int -\frac{1}{x^{2}} \, dx = -\int x^{-2} \, dx = -\frac{x^{-1}}{-1} = \frac{1}{x}\]
+                    \[\int \frac{2}{x - 1} \, dx = 2\ln|x - 1|\]
+                </div>
+            </div>
+
+            <div class="step">
+                <p>Суммируем результаты:</p>
+                <div class="formula">
+                    \[x - \ln|x| + \frac{1}{x} + 2\ln|x - 1| + C\]
+                </div>
+            </div>
+
+            <div class="answer">
+                <p>Ответ: \(\displaystyle x + \frac{1}{x} + \ln\frac{(x - 1)^{2}}{|x|} + C\)</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
