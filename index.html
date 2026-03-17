@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блок I</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+
+        .given {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .solution {
+            margin: 20px 0;
+        }
+
+        .step {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            background-color: #f4f8fb;
+        }
+
+        .answer {
+            background-color: #d4edda;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 25px;
+            font-weight: bold;
+            font-size: 1.2em;
+            border: 1px solid #c3e6cb;
+        }
+
+        .formula {
+            overflow-x: auto;
+            padding: 10px 0;
+            margin: 15px 0;
+        }
+
+        .calculation {
+            background-color: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .note {
+            background-color: #fff3cd;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>9.1</h1>
+
+        <div class="solution">
+
+            <div class="step">
+                <div class="formula">
+                    \[\int \frac{dx}{\sqrt[5]{3-2x}} = \int (3-2x)^{-\frac{1}{5}} \, dx\]
+                </div>
+            </div>
+
+            <div class="step">
+                <p>Пусть:</p>
+                <div class="formula">
+                    \[t = 3 - 2x\]
+                </div>
+                <div class="formula">
+                    \[dt = -2 \, dx \quad \Rightarrow \quad dx = -\frac{dt}{2}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="formula">
+                    \[\int (3-2x)^{-\frac{1}{5}} \, dx = \int t^{-\frac{1}{5}} \cdot \left(-\frac{dt}{2}\right) = -\frac{1}{2} \int t^{-\frac{1}{5}} \, dt\]
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="formula">
+                    \[\int t^{n} \, dt = \frac{t^{n+1}}{n+1} + C, \quad n \neq -1\]
+                </div>
+                <p>При \(n = -\frac{1}{5}\):</p>
+                <div class="formula">
+                    \[-\frac{1}{2} \int t^{-\frac{1}{5}} \, dt = -\frac{1}{2} \cdot \frac{t^{-\frac{1}{5}+1}}{-\frac{1}{5}+1} + C = -\frac{1}{2} \cdot \frac{t^{\frac{4}{5}}}{\frac{4}{5}} + C\]
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="formula">
+                    \[-\frac{1}{2} \cdot \frac{t^{\frac{4}{5}}}{\frac{4}{5}} = -\frac{1}{2} \cdot \frac{5}{4} \cdot t^{\frac{4}{5}} = -\frac{5}{8} t^{\frac{4}{5}}\]
+                </div>
+                <p>Выполним обратную замену \(t = 3 - 2x\):</p>
+                <div class="formula">
+                    \[-\frac{5}{8} t^{\frac{4}{5}} + C = -\frac{5}{8} (3-2x)^{\frac{4}{5}} + C\]
+                </div>
+                <div class="formula">
+                    \[-\frac{5}{8} (3-2x)^{\frac{4}{5}} + C = -\frac{5}{8} \sqrt[5]{(3-2x)^{4}} + C\]
+                </div>
+            </div>
+
+            <div class="note">
+                <p><strong>Проверка:</strong> Продифференцируем полученный результат:</p>
+                <div class="formula">
+                    \[\frac{d}{dx}\left[-\frac{5}{8} (3-2x)^{\frac{4}{5}}\right] = -\frac{5}{8} \cdot \frac{4}{5}(3-2x)^{-\frac{1}{5}} \cdot (-2) = \frac{1}{2} \cdot 4 \cdot (3-2x)^{-\frac{1}{5}} = (3-2x)^{-\frac{1}{5}} = \frac{1}{\sqrt[5]{3-2x}}\]
+                </div>
+            </div>
+
+            <div class="answer">
+                <p>Ответ: \(\displaystyle -\frac{5}{8} \sqrt[5]{(3-2x)^{4}} + C\)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
