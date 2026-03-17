@@ -260,5 +260,71 @@
         </div>
     </div>
 
+        <div class="container">
+        <h1>9.4</h1>
+
+
+        <div class="solution">
+
+            <div class="step">
+                <p>Представим исходный интеграл как разность двух интегралов:</p>
+                <div class="formula">
+                    \[\int \frac{2x - \sqrt{\arcsin x}}{\sqrt{1 - x^2}} \, dx = \int \frac{2x}{\sqrt{1 - x^2}} \, dx - \int \frac{\sqrt{\arcsin x}}{\sqrt{1 - x^2}} \, dx\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Вычисление первого интеграла</h3>
+                <p>Рассмотрим интеграл \(\displaystyle \int \frac{2x}{\sqrt{1 - x^2}} \, dx\).</p>
+                <p>Введем замену переменной:</p>
+                <div class="formula">
+                    \[t = 1 - x^2\]
+                </div>
+                <p>Тогда дифференциал:</p>
+                <div class="formula">
+                    \[dt = -2x \, dx \quad \Rightarrow \quad 2x \, dx = -dt\]
+                </div>
+                <p>Подставим в интеграл:</p>
+                <div class="formula">
+                    \[\int \frac{-dt}{\sqrt{t}} = -\int t^{-\frac{1}{2}} \, dt = -2\sqrt{t} = -2\sqrt{1 - x^2}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Вычисление второго интеграла</h3>
+                <p>Рассмотрим интеграл \(\displaystyle \int \frac{\sqrt{\arcsin x}}{\sqrt{1 - x^2}} \, dx\).</p>
+                <p>Введем замену переменной:</p>
+                <div class="formula">
+                    \[u = \arcsin x\]
+                </div>
+                <p>Тогда дифференциал (учитывая, что производная \(\arcsin x\) равна \(\frac{1}{\sqrt{1-x^2}}\)):</p>
+                <div class="formula">
+                    \[du = \frac{dx}{\sqrt{1 - x^2}}\]
+                </div>
+                <p>Подставим в интеграл:</p>
+                <div class="formula">
+                    \[\int \sqrt{u} \, du = \int u^{\frac{1}{2}} \, du = \frac{2}{3} u^{\frac{3}{2}} = \frac{2}{3} (\arcsin x)^{\frac{3}{2}} = \frac{2}{3} \arcsin x \sqrt{\arcsin x}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="formula">
+                    \[\int \frac{2x - \sqrt{\arcsin x}}{\sqrt{1 - x^2}} \, dx = I_1 - I_2 = -2\sqrt{1 - x^2} - \frac{2}{3} (\arcsin x)^{\frac{3}{2}} + C\]
+                </div>
+            </div>
+
+            <div class="note">
+                <p><strong>Проверка:</strong></p>
+                <p>1. \(\left( -2\sqrt{1-x^2} \right)' = -2 \cdot \frac{1}{2\sqrt{1-x^2}} \cdot (-2x) = \frac{2x}{\sqrt{1-x^2}}\)</p>
+                <p>2. \(\left( -\frac{2}{3}(\arcsin x)^{3/2} \right)' = -\frac{2}{3} \cdot \frac{3}{2}(\arcsin x)^{1/2} \cdot \frac{1}{\sqrt{1-x^2}} = -\frac{\sqrt{\arcsin x}}{\sqrt{1-x^2}}\)</p>
+                <p>Сумма производных дает подынтегральную функцию.</p>
+            </div>
+
+            <div class="answer">
+                <p>Ответ: \(\displaystyle -2\sqrt{1 - x^2} - \frac{2}{3}(\arcsin x)^{\frac{3}{2}} + C\)</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
