@@ -155,7 +155,7 @@
     </div>
 
     <div class="container">
-        <h1>Задание 9.2</h1>
+        <h1>9.2</h1>
 
         <div class="solution">
 
@@ -206,6 +206,56 @@
 
             <div class="answer">
                 <p>Ответ: \(\displaystyle 2 \ln\left|\sin\frac{x}{2}\right| + C\)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>9.3</h1>
+
+        <div class="solution">
+
+            <div class="step">
+                <h3>Введение замены переменной</h3>
+                <div class="formula">
+                    \[t = -\text{tg} x\]
+                </div>
+                <div class="formula">
+                    \[dt = d(-\text{tg} x) = -\frac{1}{\cos^{2} x} dx \quad \Rightarrow \quad \frac{dx}{\cos^{2} x} = -dt\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Подстановка в интеграл</h3>
+                <div class="formula">
+                    \[\int \frac{e^{-\text{tg} x}}{\cos^{2} x} \, dx = \int e^{-\text{tg} x} \cdot \frac{dx}{\cos^{2} x}\]
+                </div>
+                <p>Подставляя \(e^{-\text{tg} x} = e^{t}\) и \(\frac{dx}{\cos^{2} x} = -dt\), получаем:</p>
+                <div class="formula">
+                    \[= \int e^{t} \cdot (-dt) = -\int e^{t} \, dt\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Интегрирование и обратная замена</h3>
+                <div class="formula">
+                    \[-\int e^{t} \, dt = -e^{t} + C\]
+                </div>
+                <p>Вернемся к исходной переменной \(x\). Так как \(t = -\text{tg} x\), то:</p>
+                <div class="formula">
+                    \[-e^{t} + C = -e^{-\text{tg} x} + C\]
+                </div>
+            </div>
+
+            <div class="note">
+                <p><strong>Проверка:</strong> Продифференцируем полученный результат:</p>
+                <div class="formula">
+                    \[\left( -e^{-\text{tg} x} \right)' = -e^{-\text{tg} x} \cdot (-\text{tg} x)' = -e^{-\text{tg} x} \cdot \left( -\frac{1}{\cos^{2} x} \right) = \frac{e^{-\text{tg} x}}{\cos^{2} x}\]
+                </div>
+            </div>
+
+            <div class="answer">
+                <p>Ответ: \(\displaystyle -e^{-\text{tg} x} + C\)</p>
             </div>
         </div>
     </div>
