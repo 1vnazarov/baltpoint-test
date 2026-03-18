@@ -928,5 +928,90 @@
         </div>
     </div>
 
+    <div class="container">
+        <h1>10.2</h1>
+
+        <div class="given">
+            <p><strong>Условие:</strong> Оцените абсолютную и относительную погрешность при вычислении значения функции \(z(x, y)\) в точке \((x, y)\).</p>
+            <div class="formula">
+                \[z = \sin^{2} x \cdot \text{tg} y\]
+            </div>
+            <div class="formula">
+                \[x = \frac{\pi}{2} \pm 0.02, \quad y = \frac{\pi}{4} \pm 0.03\]
+            </div>
+        </div>
+
+        <div class="solution">
+
+            <div class="step">
+                <h3>1. Вычисление точного значения функции \(z\)</h3>
+                <p>Подставим номинальные значения аргументов \(x_0 = \frac{\pi}{2}\) и \(y_0 = \frac{\pi}{4}\) в функцию:</p>
+                <div class="formula">
+                    \[z_0 = \sin^{2}\left(\frac{\pi}{2}\right) \cdot \text{tg}\left(\frac{\pi}{4}\right)\]
+                </div>
+                <p>Так как \(\sin\frac{\pi}{2} = 1\) и \(\text{tg}\frac{\pi}{4} = 1\), получаем:</p>
+                <div class="formula">
+                    \[z_0 = 1^{2} \cdot 1 = 1\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>2. Вычисление частных производных</h3>
+                <p>Найдем частные производные функции \(z\) по переменным \(x\) и \(y\):</p>
+                <div class="formula">
+                    \[\frac{\partial z}{\partial x} = 2 \sin x \cos x \cdot \text{tg} y = \sin 2x \cdot \text{tg} y\]
+                </div>
+                <div class="formula">
+                    \[\frac{\partial z}{\partial y} = \sin^{2} x \cdot \frac{1}{\cos^{2} y}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>3. Оценка погрешностей измерений аргументов</h3>
+                <p>Из условия имеем абсолютные погрешности аргументов:</p>
+                <div class="formula">
+                    \[\Delta x = 0.02, \quad \Delta y = 0.03\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>4. Вычисление значений частных производных в точке</h3>
+                <p>Вычислим значения производных в номинальной точке \((\frac{\pi}{2}, \frac{\pi}{4})\):</p>
+                <div class="formula">
+                    \[\left. \frac{\partial z}{\partial x} \right|_{(\frac{\pi}{2}, \frac{\pi}{4})} = \sin\left(2 \cdot \frac{\pi}{2}\right) \cdot \text{tg}\left(\frac{\pi}{4}\right) = \sin \pi \cdot 1 = 0 \cdot 1 = 0\]
+                </div>
+                <div class="formula">
+                    \[\left. \frac{\partial z}{\partial y} \right|_{(\frac{\pi}{2}, \frac{\pi}{4})} = \sin^{2}\left(\frac{\pi}{2}\right) \cdot \frac{1}{\cos^{2}\left(\frac{\pi}{4}\right)} = 1^{2} \cdot \frac{1}{(\frac{\sqrt{2}}{2})^{2}} = 1 \cdot \frac{1}{\frac{1}{2}} = 2\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>5. Оценка абсолютной погрешности \(\Delta z\)</h3>
+                <p>Используем формулу для оценки абсолютной погрешности функции:</p>
+                <div class="formula">
+                    \[\Delta z \approx \left| \frac{\partial z}{\partial x} \right| \Delta x + \left| \frac{\partial z}{\partial y} \right| \Delta y\]
+                </div>
+                <p>Подставим найденные значения:</p>
+                <div class="formula">
+                    \[\Delta z \approx |0| \cdot 0.02 + |2| \cdot 0.03 = 0 + 0.06 = 0.06\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>6. Оценка относительной погрешности \(\delta z\)</h3>
+                <p>Относительная погрешность вычисляется как отношение абсолютной погрешности к значению функции:</p>
+                <div class="formula">
+                    \[\delta z = \frac{\Delta z}{|z_0|} = \frac{0.06}{1} = 0.06\]
+                </div>
+                <p>\(0.06 \cdot 100\% = 6\%\)</p>
+            </div>
+
+            <div class="answer">
+                <p>Абсолютная погрешность: \(\displaystyle \Delta z = 0.06\)</p>
+                <p>Относительная погрешность: \(\displaystyle \delta z = 0.06 \quad (6\%)\)</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
