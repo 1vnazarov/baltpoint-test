@@ -823,5 +823,110 @@
         </div>
     </div>
 
+    <div class="container">
+        <h1>10.1</h1>
+
+        <div class="given">
+            <p>Дана функция:</p>
+            <div class="formula">
+                \[z = (\cos xy)^{\ln(x^{2} + y)} + \arccos\sqrt{xy}\]
+            </div>
+            <p>Найти частные производные \(\frac{\partial z}{\partial x}\) и \(\frac{\partial z}{\partial y}\).</p>
+        </div>
+
+        <div class="solution">
+
+            <div class="step">
+                <h3>Разбиение функции на слагаемые</h3>
+                <p>Представим функцию \(z\) как сумму двух слагаемых:</p>
+                <div class="formula">
+                    \[z = u + v\]
+                </div>
+                <p>где \(u = (\cos xy)^{\ln(x^{2} + y)}\) и \(v = \arccos\sqrt{xy}\).</p>
+                <p>Воспользуемся правилом линейности производной: \(\frac{\partial z}{\partial x} = \frac{\partial u}{\partial x} + \frac{\partial v}{\partial x}\) (аналогично для \(y\)).</p>
+            </div>
+
+            <div class="step">
+                <h3>Производная второго слагаемого \(v\)</h3>
+                <p>Найдем частную производную функции \(v = \arccos\sqrt{xy}\) по переменной \(x\). Используем правило дифференцирования сложной функции и производную арккосинуса \((\arccos t)' = -\frac{1}{\sqrt{1-t^{2}}}\):</p>
+                <div class="formula">
+                    \[\frac{\partial v}{\partial x} = -\frac{1}{\sqrt{1-(\sqrt{xy})^{2}}} \cdot (\sqrt{xy})'_x = -\frac{1}{\sqrt{1-xy}} \cdot \frac{1}{2\sqrt{xy}} \cdot y\]
+                </div>
+                <div class="formula">
+                    \[\frac{\partial v}{\partial x} = -\frac{y}{2\sqrt{xy(1-xy)}}\]
+                </div>
+                <p>Аналогично найдем производную по \(y\) (отличие только в множителе от корня):\((\sqrt{xy})'_y = \frac{x}{2\sqrt{xy}}\).:</p>
+                <div class="formula">
+                    \[\frac{\partial v}{\partial y} = -\frac{x}{2\sqrt{xy(1-xy)}}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Производная первого слагаемого \(u\) (метод логарифмирования)</h3>
+                <p>Для нахождения производной степенно-показательной функции \(u = (\cos xy)^{\ln(x^{2} + y)}\) прологарифмируем её:</p>
+                <div class="formula">
+                    \[\ln u = \ln(x^{2} + y) \cdot \ln(\cos xy)\]
+                </div>
+                <p>Дифференцируем обе части по \(x\), считая \(y\) константой:</p>
+                <div class="formula">
+                    \[\frac{1}{u} \frac{\partial u}{\partial x} = \left(\ln(x^{2} + y)\right)'_x \cdot \ln(\cos xy) + \ln(x^{2} + y) \cdot \left(\ln(\cos xy)\right)'_x\]
+                </div>
+                <p>Вычислим отдельные производные:</p>
+                <div class="formula">
+                    \[\left(\ln(x^{2} + y)\right)'_x = \frac{2x}{x^{2}+y}\]
+                    \[\left(\ln(\cos xy)\right)'_x = \frac{1}{\cos xy} \cdot (-\sin xy) \cdot y = -y \text{tg} (xy)\]
+                </div>
+                <p>Подставим обратно:</p>
+                <div class="formula">
+                    \[\frac{\partial u}{\partial x} = u \left( \frac{2x \ln(\cos xy)}{x^{2}+y} - y \text{tg}(xy) \ln(x^{2}+y) \right)\]
+                </div>
+                <p>Возвращая \(u\), получаем:</p>
+                <div class="formula">
+                    \[\frac{\partial u}{\partial x} = (\cos xy)^{\ln(x^{2} + y)} \left( \frac{2x \ln(\cos xy)}{x^{2}+y} - y \text{tg}(xy) \ln(x^{2}+y) \right)\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Производная \(u\) по переменной \(y\)</h3>
+                <p>Аналогично дифференцируем логарифм \(u\) по \(y\):</p>
+                <div class="formula">
+                    \[\frac{1}{u} \frac{\partial u}{\partial y} = \left(\ln(x^{2} + y)\right)'_y \cdot \ln(\cos xy) + \ln(x^{2} + y) \cdot \left(\ln(\cos xy)\right)'_y\]
+                </div>
+                <p>Вычислим производные:</p>
+                <div class="formula">
+                    \[\left(\ln(x^{2} + y)\right)'_y = \frac{1}{x^{2}+y}\]
+                    \[\left(\ln(\cos xy)\right)'_y = \frac{1}{\cos xy} \cdot (-\sin xy) \cdot x = -x \text{tg} (xy)\]
+                </div>
+                <p>Подставим обратно:</p>
+                <div class="formula">
+                    \[\frac{\partial u}{\partial y} = u \left( \frac{\ln(\cos xy)}{x^{2}+y} - x \text{tg}(xy) \ln(x^{2}+y) \right)\]
+                </div>
+                <p>Полный вид:</p>
+                <div class="formula">
+                    \[\frac{\partial u}{\partial y} = (\cos xy)^{\ln(x^{2} + y)} \left( \frac{\ln(\cos xy)}{x^{2}+y} - x \text{tg}(xy) \ln(x^{2}+y) \right)\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Составление итоговых производных</h3>
+                <p>Сложим найденные производные слагаемых \(u\) и \(v\).</p>
+                <p><strong>По переменной \(x\):</strong></p>
+                <div class="formula">
+                    \[\frac{\partial z}{\partial x} = (\cos xy)^{\ln(x^{2} + y)} \left( \frac{2x \ln(\cos xy)}{x^{2}+y} - y \text{tg}(xy) \ln(x^{2}+y) \right) - \frac{y}{2\sqrt{xy(1-xy)}}\]
+                </div>
+                <p><strong>По переменной \(y\):</strong></p>
+                <div class="formula">
+                    \[\frac{\partial z}{\partial y} = (\cos xy)^{\ln(x^{2} + y)} \left( \frac{\ln(\cos xy)}{x^{2}+y} - x \text{tg}(xy) \ln(x^{2}+y) \right) - \frac{x}{2\sqrt{xy(1-xy)}}\]
+                </div>
+            </div>
+
+            <div class="answer">
+                <p>\(\displaystyle \frac{\partial z}{\partial x} = (\cos xy)^{\ln(x^{2} + y)} \left( \frac{2x \ln(\cos xy)}{x^{2}+y} - y \text{tg}(xy) \ln(x^{2}+y) \right) - \frac{y}{2\sqrt{xy(1-xy)}}\)</p>
+                <br>
+                <p>\(\displaystyle \frac{\partial z}{\partial y} = (\cos xy)^{\ln(x^{2} + y)} \left( \frac{\ln(\cos xy)}{x^{2}+y} - x \text{tg}(xy) \ln(x^{2}+y) \right) - \frac{x}{2\sqrt{xy(1-xy)}}\)</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
