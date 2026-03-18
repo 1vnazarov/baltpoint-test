@@ -1013,5 +1013,86 @@
         </div>
     </div>
 
+    <div class="container">
+        <h1>10.3</h1>
+
+        <div class="given">
+            <p>Найти формулы для частных производных \(\frac{\partial u}{\partial t}\) и \(\frac{\partial u}{\partial s}\).</p>
+            <div class="formula">
+                \[u = \sin\left(\frac{z}{x + y}\right) - \frac{1}{2}\ln(x + y - z)\]
+            </div>
+            <p>при условии \(x = x(t)\), \(y = y(s)\), \(z = z(s, t)\).</p>
+        </div>
+
+        <div class="solution">
+
+            <div class="step">
+                <h3>1. Анализ структуры сложной функции</h3>
+                <p>Функция \(u\) зависит от переменных \(x, y, z\). Эти переменные, в свою очередь, зависят от \(s\) и \(t\).</p>
+                <p>Схема зависимостей:</p>
+                <ul>
+                    <li>Переменная \(t\) влияет на \(x\) и \(z\) (так как \(x=x(t)\) и \(z=z(s,t)\)).</li>
+                    <li>Переменная \(s\) влияет на \(y\) и \(z\) (так как \(y=y(s)\) и \(z=z(s,t)\)).</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>2. Вычисление частных производных первого порядка по \(x, y, z\)</h3>
+                <p>Применим правило дифференцирования сложной функции. Сначала найдем «промежуточные» частные производные функции \(u(x, y, z)\).</p>
+                
+                <p><strong>Производная по \(x\):</strong></p>
+                <div class="formula">
+                    \[\frac{\partial u}{\partial x} = \cos\left(\frac{z}{x + y}\right) \cdot \left(\frac{z}{x + y}\right)'_x - \frac{1}{2(x + y - z)} \cdot (x + y - z)'_x\]
+                    \[= \cos\left(\frac{z}{x + y}\right) \cdot \left(-\frac{z}{(x+y)^2}\right) - \frac{1}{2(x + y - z)}\]
+                    \[= -\frac{z}{(x+y)^2}\cos\left(\frac{z}{x + y}\right) - \frac{1}{2(x + y - z)}\]
+                </div>
+
+                <p><strong>Производная по \(y\):</strong></p>
+                <div class="formula">
+                    \[\frac{\partial u}{\partial y} = \cos\left(\frac{z}{x + y}\right) \cdot \left(-\frac{z}{(x+y)^2}\right) - \frac{1}{2(x + y - z)}\]
+                    \[= -\frac{z}{(x+y)^2}\cos\left(\frac{z}{x + y}\right) - \frac{1}{2(x + y - z)}\]
+                </div>
+
+                <p><strong>Производная по \(z\):</strong></p>
+                <div class="formula">
+                    \[\frac{\partial u}{\partial z} = \cos\left(\frac{z}{x + y}\right) \cdot \frac{1}{x+y} - \frac{1}{2(x + y - z)} \cdot (-1)\]
+                    \[= \frac{1}{x+y}\cos\left(\frac{z}{x + y}\right) + \frac{1}{2(x + y - z)}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>3. Вычисление частной производной \(\frac{\partial u}{\partial t}\)</h3>
+                <p>Переменная \(t\) входит в \(x(t)\) и \(z(s,t)\). Переменная \(y\) от \(t\) не зависит. Используем формулу полной производной:</p>
+                <div class="formula">
+                    \[\frac{\partial u}{\partial t} = \frac{\partial u}{\partial x} \cdot \frac{dx}{dt} + \frac{\partial u}{\partial z} \cdot \frac{\partial z}{\partial t}\]
+                </div>
+                <p>Подставим значения промежуточных производных:</p>
+                <div class="formula">
+                    \[\frac{\partial u}{\partial t} = \left[ -\frac{z}{(x+y)^2}\cos\left(\frac{z}{x + y}\right) - \frac{1}{2(x + y - z)} \right] x'(t) \; +\]
+                    \[+ \left[ \frac{1}{x+y}\cos\left(\frac{z}{x + y}\right) + \frac{1}{2(x + y - z)} \right] \frac{\partial z}{\partial t}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>4. Вычисление частной производной \(\frac{\partial u}{\partial s}\)</h3>
+                <p>Переменная \(s\) входит в \(y(s)\) и \(z(s,t)\). Переменная \(x\) от \(s\) не зависит.</p>
+                <div class="formula">
+                    \[\frac{\partial u}{\partial s} = \frac{\partial u}{\partial y} \cdot \frac{dy}{ds} + \frac{\partial u}{\partial z} \cdot \frac{\partial z}{\partial s}\]
+                </div>
+                <p>Подставим значения:</p>
+                <div class="formula">
+                    \[\frac{\partial u}{\partial s} = \left[ -\frac{z}{(x+y)^2}\cos\left(\frac{z}{x + y}\right) - \frac{1}{2(x + y - z)} \right] y'(s) \; +\]
+                    \[+ \left[ \frac{1}{x+y}\cos\left(\frac{z}{x + y}\right) + \frac{1}{2(x + y - z)} \right] \frac{\partial z}{\partial s}\]
+                </div>
+            </div>
+
+            <div class="answer">
+                <p>\(\displaystyle \frac{\partial u}{\partial t} = \left( \frac{\cos\frac{z}{x+y}}{x+y} + \frac{1}{2(x+y-z)} \right) \frac{\partial z}{\partial t} - \left( \frac{z \cos\frac{z}{x+y}}{(x+y)^2} + \frac{1}{2(x+y-z)} \right) \frac{dx}{dt}\)</p>
+                <br>
+                <p>\(\displaystyle \frac{\partial u}{\partial s} = \left( \frac{\cos\frac{z}{x+y}}{x+y} + \frac{1}{2(x+y-z)} \right) \frac{\partial z}{\partial s} - \left( \frac{z \cos\frac{z}{x+y}}{(x+y)^2} + \frac{1}{2(x+y-z)} \right) \frac{dy}{ds}\)</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
