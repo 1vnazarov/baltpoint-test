@@ -1094,5 +1094,126 @@
         </div>
     </div>
 
+    <div class="container">
+        <h1>10.4</h1>
+
+        <div class="given">
+            <p>Вычислить все частные производные второго порядка для функции \(u(x, y, z)\):</p>
+            <div class="formula">
+                \[u = \text{tg}\left(\frac{x}{y+z}\right) + \sqrt{x^2 - yz}\]
+            </div>
+        </div>
+
+        <div class="solution">
+
+            <div class="step">
+                <h3>1. Вычисление производных первого порядка</h3>
+                <p>Представим функцию как сумму двух слагаемых: \(u = f + g\), где \(f = \text{tg}\left(\frac{x}{y+z}\right)\) и \(g = \sqrt{x^2 - yz}\). Для удобства обозначим аргумент тангенса как \(A = \frac{x}{y+z}\), а выражение под корнем как \(R = \sqrt{x^2 - yz}\).</p>
+                
+                <p><strong>Производная по \(x\):</strong></p>
+                <div class="formula">
+                    \[u'_x = \frac{1}{\cos^2 A} \cdot \frac{1}{y+z} + \frac{1}{2\sqrt{x^2 - yz}} \cdot 2x = \frac{1}{(y+z)\cos^2 A} + \frac{x}{R}\]
+                </div>
+
+                <p><strong>Производная по \(y\):</strong></p>
+                <div class="formula">
+                    \[u'_y = \frac{1}{\cos^2 A} \cdot \left(-\frac{x}{(y+z)^2}\right) + \frac{1}{2R} \cdot (-z) = -\frac{x}{(y+z)^2\cos^2 A} - \frac{z}{2R}\]
+                </div>
+
+                <p><strong>Производная по \(z\):</strong></p>
+                <div class="formula">
+                    \[u'_z = \frac{1}{\cos^2 A} \cdot \left(-\frac{x}{(y+z)^2}\right) + \frac{1}{2R} \cdot (-y) = -\frac{x}{(y+z)^2\cos^2 A} - \frac{y}{2R}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>2. Вычисление чистых производных второго порядка</h3>
+                
+                <p><strong>Вторая производная по \(x\) (\(u''_{xx}\)):</strong></p>
+                <p>Дифференцируем \(u'_x\) по \(x\):</p>
+                <div class="formula">
+                    \[u''_{xx} = \left(\frac{1}{y+z}(\cos A)^{-2}\right)'_x + \left(\frac{x}{R}\right)'_x\]
+                    \[= \frac{1}{y+z} \cdot \frac{2\sin A}{\cos^3 A} \cdot \frac{1}{y+z} + \frac{R - x \cdot \frac{x}{R}}{R^2} = \frac{2\sin A}{(y+z)^2\cos^3 A} + \frac{R^2 - x^2}{R^3}\]
+                </div>
+                <p>Учитывая, что \(R^2 - x^2 = (x^2 - yz) - x^2 = -yz\), получаем:</p>
+                <div class="formula">
+                    \[u''_{xx} = \frac{2\sin\left(\frac{x}{y+z}\right)}{(y+z)^2\cos^3\left(\frac{x}{y+z}\right)} - \frac{yz}{(x^2 - yz)^{3/2}}\]
+                </div>
+
+                <p><strong>Вторая производная по \(y\) (\(u''_{yy}\)):</strong></p>
+                <p>Дифференцируем \(u'_y\) по \(y\). Заметим, что \(\frac{\partial A}{\partial y} = -\frac{x}{(y+z)^2}\).</p>
+                <div class="formula">
+                    \[\left(-\frac{x}{(y+z)^2\cos^2 A}\right)'_y = -\frac{\partial}{\partial y} \left[ (y+z)^{-2}(\cos A)^{-2} \right]\]
+                </div>
+                <p>Используя логарифмическое дифференцирование или правило произведения:</p>
+                <div class="formula">
+                    \[= \frac{2x}{(y+z)^3\cos^2 A} - \frac{2x^2 \sin A}{(y+z)^4\cos^3 A}\]
+                </div>
+                <p>Второе слагаемое: \(\left(-\frac{z}{2R}\right)'_y = -\frac{z}{2} \left(-\frac{1}{2}R^{-3}(-z)\right) = -\frac{z^2}{4R^3}\).</p>
+                <p>Итог:</p>
+                <div class="formula">
+                    \[u''_{yy} = \frac{2x}{(y+z)^3\cos^2 A} - \frac{2x^2 \sin A}{(y+z)^4\cos^3 A} - \frac{z^2}{4(x^2 - yz)^{3/2}}\]
+                </div>
+
+                <p><strong>Вторая производная по \(z\) (\(u''_{zz}\)):</strong></p>
+                <p>В силу симметрии выражений относительно \(y\) и \(z\), результат получается из \(u''_{yy}\) заменой \(y \leftrightarrow z\):</p>
+                <div class="formula">
+                    \[u''_{zz} = \frac{2x}{(y+z)^3\cos^2 A} - \frac{2x^2 \sin A}{(y+z)^4\cos^3 A} - \frac{y^2}{4(x^2 - yz)^{3/2}}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>3. Вычисление смешанных производных второго порядка</h3>
+                
+                <p><strong>Смешанная производная \(u''_{xy}\) (или \(u''_{yx}\)):</strong></p>
+                <p>Дифференцируем \(u'_x\) по \(y\):</p>
+                <div class="formula">
+                    \[\left(\frac{1}{y+z}\frac{1}{\cos^2 A}\right)'_y = -\frac{1}{(y+z)^2\cos^2 A} + \frac{1}{y+z}\frac{2\sin A}{\cos^3 A}\left(-\frac{x}{(y+z)^2}\right)\]
+                    \[= -\frac{1}{(y+z)^2\cos^2 A} - \frac{2x\sin A}{(y+z)^3\cos^3 A}\]
+                </div>
+                <p>Производная от второго слагаемого \(u'_x\) по \(y\): \(\left(\frac{x}{R}\right)'_y = -\frac{xz}{2R^3}\).</p>
+                <p>Итог:</p>
+                <div class="formula">
+                    \[u''_{xy} = -\frac{1}{(y+z)^2\cos^2\left(\frac{x}{y+z}\right)} - \frac{2x\sin\left(\frac{x}{y+z}\right)}{(y+z)^3\cos^3\left(\frac{x}{y+z}\right)} + \frac{xz}{2(x^2 - yz)^{3/2}}\]
+                </div>
+
+                <p><strong>Смешанная производная \(u''_{xz}\) (или \(u''_{zx}\)):</strong></p>
+                <p>Дифференцируем \(u'_x\) по \(z\). Первая часть совпадает с предыдущим случаем (зависимость от \(y+z\) одинакова), вторая часть меняется:</p>
+                <div class="formula">
+                    \[u''_{xz} = -\frac{1}{(y+z)^2\cos^2\left(\frac{x}{y+z}\right)} - \frac{2x\sin\left(\frac{x}{y+z}\right)}{(y+z)^3\cos^3\left(\frac{x}{y+z}\right)} + \frac{xy}{2(x^2 - yz)^{3/2}}\]
+                </div>
+
+                <p><strong>Смешанная производная \(u''_{yz}\) (или \(u''_{zy}\)):</strong></p>
+                <p>Дифференцируем \(u'_y\) по \(z\):</p>
+                <div class="formula">
+                    \[\left(-\frac{x}{(y+z)^2\cos^2 A}\right)'_z = -\frac{\partial}{\partial z} \left[ (y+z)^{-2}(\cos A)^{-2} \right]\]
+                </div>
+                <p>Производная выражения в скобках (аналогично случаю для \(u''_{yy}\), но по \(z\)):</p>
+                <div class="formula">
+                    \[= -x \left[ -\frac{2}{(y+z)^3\cos^2 A} - \frac{2\sin A}{\cos^3 A}\frac{x}{(y+z)^2}\frac{1}{y+z} \right]\]
+                    \[= \frac{2x}{(y+z)^3\cos^2 A} + \frac{2x^2\sin A}{(y+z)^4\cos^3 A}\]
+                </div>
+                <p>Производная от второго слагаемого \(u'_y\) по \(z\): \(\left(-\frac{z}{2R}\right)'_z = -\frac{1}{2R} - \frac{z}{2}\left(-\frac{y}{2R^3}\right) = \frac{yz - 2(x^2-yz)}{4R^3} = \frac{yz - 2R^2}{4R^3}\).</p>
+                <p>Итог:</p>
+                <div class="formula">
+                    \[u''_{yz} = \frac{2x}{(y+z)^3\cos^2\left(\frac{x}{y+z}\right)} + \frac{2x^2\sin\left(\frac{x}{y+z}\right)}{(y+z)^4\cos^3\left(\frac{x}{y+z}\right)} + \frac{yz - 2x^2}{4(x^2 - yz)^{3/2}}\]
+                </div>
+            </div>
+
+            <div class="answer">
+                <p><strong>Чистые производные:</strong></p>
+                <p>\(\displaystyle u''_{xx} = \frac{2\sin A}{(y+z)^2\cos^3 A} - \frac{yz}{(x^2 - yz)^{3/2}}\)</p>
+                <p>\(\displaystyle u''_{yy} = \frac{2x}{(y+z)^3\cos^2 A} - \frac{2x^2 \sin A}{(y+z)^4\cos^3 A} - \frac{z^2}{4(x^2 - yz)^{3/2}}\)</p>
+                <p>\(\displaystyle u''_{zz} = \frac{2x}{(y+z)^3\cos^2 A} - \frac{2x^2 \sin A}{(y+z)^4\cos^3 A} - \frac{y^2}{4(x^2 - yz)^{3/2}}\)</p>
+                <br>
+                <p><strong>Смешанные Производные:</strong></p>
+                <p>\(\displaystyle u''_{xy} = -\frac{1}{(y+z)^2\cos^2 A} - \frac{2x\sin A}{(y+z)^3\cos^3 A} + \frac{xz}{2(x^2 - yz)^{3/2}}\)</p>
+                <p>\(\displaystyle u''_{xz} = -\frac{1}{(y+z)^2\cos^2 A} - \frac{2x\sin A}{(y+z)^3\cos^3 A} + \frac{xy}{2(x^2 - yz)^{3/2}}\)</p>
+                <p>\(\displaystyle u''_{yz} = \frac{2x}{(y+z)^3\cos^2 A} + \frac{2x^2\sin A}{(y+z)^4\cos^3 A} + \frac{yz - 2x^2}{4(x^2 - yz)^{3/2}}\)</p>
+                <p><em>где \(A = \frac{x}{y+z}\).</em></p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
