@@ -1290,5 +1290,113 @@
         </div>
     </div>
 
+    <div class="container">
+        <h1>10.6</h1>
+
+        <div class="given">
+            <p>Вычислите \(y'\) и \(y''\) для функции \(y(x)\), заданной неявной зависимостью:</p>
+            <div class="formula">
+                \[y = \text{arctg} \frac{\sqrt{y}}{x}\]
+            </div>
+        </div>
+
+        <div class="solution">
+
+            <div class="step">
+                <h3>1. Упрощение уравнения</h3>
+                <p>Возьмем тангенс от обеих частей уравнения, чтобы избавиться от обратной тригонометрической функции:</p>
+                <div class="formula">
+                    \[\text{tg} \, y = \frac{\sqrt{y}}{x}\]
+                </div>
+                <p>Выразим \(x\) через \(y\) или оставим в таком виде для дифференцирования. Умножим обе части на \(x\):</p>
+                <div class="formula">
+                    \[x \, \text{tg} \, y = \sqrt{y}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>2. Нахождение первой производной \(y'\)</h3>
+                <p>Продифференцируем обе части уравнения по \(x\), помня, что \(y\) — функция от \(x\). Используем правило производной произведения и сложной функции:</p>
+                <div class="formula">
+                    \[(x \, \text{tg} \, y)' = (\sqrt{y})'\]
+                    \[\text{tg} \, y + x \cdot \frac{1}{\cos^2 y} \cdot y' = \frac{1}{2\sqrt{y}} \cdot y'\]
+                </div>
+                <p>Сгруппируем слагаемые, содержащие \(y'\), в левой части, а остальные — в правой:</p>
+                <div class="formula">
+                    \[\text{tg} \, y = y' \left( \frac{1}{2\sqrt{y}} - \frac{x}{\cos^2 y} \right)\]
+                </div>
+                <p>Выразим \(y'\):</p>
+                <div class="formula">
+                    \[y' = \frac{\text{tg} \, y}{\frac{1}{2\sqrt{y}} - \frac{x}{\cos^2 y}}\]
+                </div>
+                <p>Упростим выражение. Умножим числитель и знаменатель на \(2\sqrt{y} \cos^2 y\):</p>
+                <div class="formula">
+                    \[y' = \frac{2\sqrt{y} \cos^2 y \, \text{tg} \, y}{\cos^2 y - 2x\sqrt{y}}\]
+                </div>
+                <p>Вспомним исходное равенство \(x \, \text{tg} \, y = \sqrt{y}\). Выразим \(\text{tg} \, y = \frac{\sqrt{y}}{x}\) и подставим в числитель:</p>
+                <div class="formula">
+                    \[y' = \frac{2\sqrt{y} \cos^2 y \cdot \frac{\sqrt{y}}{x}}{\cos^2 y - 2x\sqrt{y}} = \frac{\frac{2y}{x} \cos^2 y}{\cos^2 y - 2x\sqrt{y}}\]
+                </div>
+                <p>Сократим числитель и знаменатель на \(\cos^2 y\) (предполагая, что \(\cos y \neq 0\), что верно для \(\text{arctg}\)):</p>
+                <div class="formula">
+                    \[y' = \frac{2y/x}{1 - \frac{2x\sqrt{y}}{\cos^2 y}}\]
+                </div>
+                <p>Используя тождество \(\frac{1}{\cos^2 y} = 1 + \text{tg}^2 y = 1 + \frac{y}{x^2} = \frac{x^2+y}{x^2}\), преобразуем знаменатель:</p>
+                <div class="formula">
+                    \[\frac{2x\sqrt{y}}{\cos^2 y} = 2x\sqrt{y} \frac{x^2+y}{x^2} = \frac{2\sqrt{y}(x^2+y)}{x}\]
+                </div>
+                <p>Окончательная формула для первой производной:</p>
+                <div class="formula">
+                    \[y' = \frac{\frac{2y}{x}}{1 - \frac{2\sqrt{y}(x^2+y)}{x}} = \frac{2y}{x - 2\sqrt{y}(x^2+y)}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>3. Нахождение второй производной \(y''\)</h3>
+                <p>Продифференцируем выражение для \(y'\) по переменной \(x\). Обозначим \(y' = \frac{u}{v}\), где \(u = 2y\), \(v = x - 2\sqrt{y}(x^2+y)\).</p>
+                <div class="formula">
+                    \[y'' = \frac{u'v - uv'}{v^2}\]
+                </div>
+                <p><strong>Производная числителя \(u'\):</strong></p>
+                <div class="formula">
+                    \[u' = 2y'\]
+                </div>
+                <p><strong>Производная знаменателя \(v'\):</strong></p>
+                <div class="formula">
+                    \[v = x - 2y^{1/2}(x^2+y)\]
+                    \[v' = 1 - 2 \left[ \frac{y'}{2\sqrt{y}}(x^2+y) + \sqrt{y}(2x+y') \right]\]
+                    \[v' = 1 - \frac{y'(x^2+y)}{\sqrt{y}} - 4x\sqrt{y} - 2y y'\]
+                </div>
+                <p><strong>Подставим в формулу \(y''\):</strong></p>
+                <div class="formula">
+                    \[y'' = \frac{2y' [x - 2\sqrt{y}(x^2+y)] - 2y [1 - \frac{y'(x^2+y)}{\sqrt{y}} - 4x\sqrt{y} - 2y y']}{[x - 2\sqrt{y}(x^2+y)]^2}\]
+                </div>
+                <p>Раскроем скобки в числителе и сгруппируем слагаемые при \(y'\):</p>
+                <div class="formula">
+                    \[\text{Числитель} = 2xy' - 4y'\sqrt{y}(x^2+y) - 2y + \frac{2yy'(x^2+y)}{\sqrt{y}} + 8xy\sqrt{y} + 4y^2 y'\]
+                </div>
+                <p>Заметим, что \(- 4y'\sqrt{y}(x^2+y) + \frac{2yy'(x^2+y)}{\sqrt{y}} = \frac{-4y y'(x^2+y) + 2y y'(x^2+y)}{\sqrt{y}} = \frac{-2y y'(x^2+y)}{\sqrt{y}} = -2y' \sqrt{y} \frac{x^2+y}{\sqrt{y}^2}(?)\). Проще: \(-4y' \sqrt{y} A + 2y' \sqrt{y} A = -2y' \sqrt{y} A\), где \(A = x^2+y\).</p>
+                <p>Тогда числитель:</p>
+                <div class="formula">
+                    \[2xy' - 2y'\sqrt{y}(x^2+y) + 4y^2 y' - 2y + 8xy\sqrt{y}\]
+                </div>
+                <p>Вынесем \(y'\) за скобки:</p>
+                <div class="formula">
+                    \[y' [ 2x - 2\sqrt{y}(x^2+y) + 4y^2 ] - 2y(1 - 4x\sqrt{y})\]
+                </div>
+                <p>Подставим \(y' = \frac{2y}{v}\), где \(v = x - 2\sqrt{y}(x^2+y)\):</p>
+                <div class="formula">
+                    \[y'' = \frac{\frac{2y}{v} [ v + 4y^2 - 2x ] - 2y(1 - 4x\sqrt{y})}{v^2} = \frac{2y [ v + 4y^2 - 2x ] - 2yv(1 - 4x\sqrt{y})}{v^3}\]
+                </div>
+            </div>
+
+            <div class="answer">
+                <p>\(\displaystyle y' = \frac{2y}{x - 2\sqrt{y}(x^2+y)}\)</p>
+                <br>
+                <p>\(\displaystyle y'' = \frac{2y' [x - 2\sqrt{y}(x^2+y) + 4y^2] - 2y(1 - 4x\sqrt{y})}{[x - 2\sqrt{y}(x^2+y)]^2}\)</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
