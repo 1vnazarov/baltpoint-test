@@ -1215,5 +1215,80 @@
         </div>
     </div>
 
+    <div class="container">
+        <h1>10.5</h1>
+
+        <div class="given">
+            <p>Вычислите дифференциал третьего порядка \(d^3u\) для функции \(u(x, y)\):</p>
+            <div class="formula">
+                \[u = \frac{x}{y}\]
+            </div>
+        </div>
+
+        <div class="solution">
+
+            <div class="step">
+                <h3>1. Вычисление частных производных первого порядка</h3>
+                <p>Найдем первые частные производные функции \(u\) по переменным \(x\) и \(y\). Удобно записать функцию как степень: \(u = x y^{-1}\).</p>
+                <div class="formula">
+                    \[\frac{\partial u}{\partial x} = \frac{1}{y} = y^{-1}\]
+                    \[\frac{\partial u}{\partial y} = x \cdot (-1) y^{-2} = -\frac{x}{y^2}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>2. Вычисление частных производных второго порядка</h3>
+                <p>Продифференцируем полученные производные еще раз:</p>
+                <div class="formula">
+                    \[\frac{\partial^2 u}{\partial x^2} = \frac{\partial}{\partial x}(y^{-1}) = 0\]
+                    \[\frac{\partial^2 u}{\partial x \partial y} = \frac{\partial}{\partial y}(y^{-1}) = -y^{-2} = -\frac{1}{y^2}\]
+                    \[\frac{\partial^2 u}{\partial y^2} = \frac{\partial}{\partial y}\left(-\frac{x}{y^2}\right) = -x \cdot (-2) y^{-3} = \frac{2x}{y^3}\]
+                </div>
+                <p>Заметим, что \(\frac{\partial^2 u}{\partial y \partial x} = \frac{\partial^2 u}{\partial x \partial y} = -\frac{1}{y^2}\).</p>
+            </div>
+
+            <div class="step">
+                <h3>3. Вычисление частных производных третьего порядка</h3>
+                <p>Найдем производные, необходимые для формулы дифференциала третьего порядка:</p>
+                <div class="formula">
+                    \[\frac{\partial^3 u}{\partial x^3} = \frac{\partial}{\partial x}(0) = 0\]
+                </div>
+                <div class="formula">
+                    \[\frac{\partial^3 u}{\partial x^2 \partial y} = \frac{\partial}{\partial y}(0) = 0\]
+                </div>
+                <div class="formula">
+                    \[\frac{\partial^3 u}{\partial x \partial y^2} = \frac{\partial}{\partial y}\left(-\frac{1}{y^2}\right) = -(-2)y^{-3} = \frac{2}{y^3}\]
+                </div>
+                <div class="formula">
+                    \[\frac{\partial^3 u}{\partial y^3} = \frac{\partial}{\partial y}\left(\frac{2x}{y^3}\right) = 2x \cdot (-3) y^{-4} = -\frac{6x}{y^4}\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>4. Составление дифференциала третьего порядка</h3>
+                <p>Дифференциал третьего порядка вычисляется по формуле (аналогичной формуле куба суммы, примененной к оператору дифференцирования):</p>
+                <div class="formula">
+                    \[d^3u = \frac{\partial^3 u}{\partial x^3}dx^3 + 3\frac{\partial^3 u}{\partial x^2 \partial y}dx^2 dy + 3\frac{\partial^3 u}{\partial x \partial y^2}dx dy^2 + \frac{\partial^3 u}{\partial y^3}dy^3\]
+                </div>
+                <p>Подставим найденные значения производных:</p>
+                <div class="formula">
+                    \[d^3u = 0 \cdot dx^3 + 3 \cdot 0 \cdot dx^2 dy + 3 \cdot \frac{2}{y^3} dx dy^2 + \left(-\frac{6x}{y^4}\right) dy^3\]
+                </div>
+                <p>Упростим выражение:</p>
+                <div class="formula">
+                    \[d^3u = \frac{6}{y^3} dx dy^2 - \frac{6x}{y^4} dy^3\]
+                </div>
+                <p>Можно вынести общий множитель \(\frac{6}{y^3}\):</p>
+                <div class="formula">
+                    \[d^3u = \frac{6}{y^3} \left( dx dy^2 - \frac{x}{y} dy^3 \right)\]
+                </div>
+            </div>
+
+            <div class="answer">
+                <p>Ответ: \(\displaystyle d^3u = \frac{6}{y^3} dx dy^2 - \frac{6x}{y^4} dy^3\)</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
