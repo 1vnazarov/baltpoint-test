@@ -1398,5 +1398,64 @@
         </div>
     </div>
 
+    <div class="container">
+        <h1>10.7</h1>
+
+        <div class="given">
+            <p>Найти частные производные \(\frac{\partial z}{\partial x}\) и \(\frac{\partial z}{\partial y}\) для функции \(z(x, y)\), заданной неявно:</p>
+            <div class="formula">
+                \[e^{2-x} = 2z + x^{2} + y^{2}\]
+            </div>
+        </div>
+
+        <div class="solution">
+
+            <div class="step">
+                <h3>1. Приведение уравнения к виду \(F(x, y, z) = 0\)</h3>
+                <p>Перенесем все слагаемые в одну сторону:</p>
+                <div class="formula">
+                    \[2z + x^{2} + y^{2} - e^{2-x} = 0\]
+                </div>
+                <p>Обозначим левую часть как функцию трех переменных \(F(x, y, z)\).</p>
+            </div>
+
+            <div class="step">
+                <h3>2. Вычисление частных производных функции \(F\)</h3>
+                <p>Найдем частные производные \(F\) по каждой из переменных \(x, y, z\):</p>
+                <div class="formula">
+                    \[\frac{\partial F}{\partial x} = 2x - e^{2-x} \cdot (-1) = 2x + e^{2-x}\]
+                </div>
+                <div class="formula">
+                    \[\frac{\partial F}{\partial y} = 2y\]
+                </div>
+                <div class="formula">
+                    \[\frac{\partial F}{\partial z} = 2\]
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>3. Вычисление частных производных \(\frac{\partial z}{\partial x}\) и \(\frac{\partial z}{\partial y}\)</h3>
+                <p>Используем формулы производных неявной функции:</p>
+                <div class="formula">
+                    \[\frac{\partial z}{\partial x} = -\frac{F'_x}{F'_z}, \quad \frac{\partial z}{\partial y} = -\frac{F'_y}{F'_z}\]
+                </div>
+                
+                <p><strong>Производная по \(x\):</strong></p>
+                <div class="formula">
+                    \[\frac{\partial z}{\partial x} = -\frac{2x + e^{2-x}}{2}\]
+                </div>
+                
+                <p><strong>Производная по \(y\):</strong></p>
+                <div class="formula">
+                    \[\frac{\partial z}{\partial y} = -\frac{2y}{2} = -y\]
+                </div>
+            </div>
+
+            <div class="answer">
+                <p>\(\displaystyle \frac{\partial z}{\partial x} = -\frac{2x + e^{2-x}}{2}, \quad \frac{\partial z}{\partial y} = -y\)</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
